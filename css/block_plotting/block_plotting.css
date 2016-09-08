@@ -1,0 +1,79 @@
+*{
+ margin: 0px;
+ padding: 0px;
+}
+#wrapper{
+ width: 950px;
+ background-color: silver;
+ margin: 0px auto;
+ overflow: hidden;
+ height: auto;
+}
+#header{
+ height: 150px;
+ background-color: green;
+ margin-top: 10px;
+ margin-right: 10px;
+ margin-bottom: 0px;
+ margin-left: 10px;
+}
+#navigation{
+ height: 300px;
+ width: 200px;
+ background-color: blue;
+ margin: 10px;
+ display: inline-block;
+ vertical-align: top;
+}
+#main_content{
+ height: 400px;
+ width: 715px;
+ background-color: red;
+ margin-top: 10px;
+ margin-right: 0px;
+ margin-left: 0px;
+ margin-bottom: 10px;
+ display: inline-block;
+}
+.subcontents1{
+ height: 200px;
+ width: 210px;
+ margin-top: 10px;
+ margin-right: 10px;
+ margin-bottom: 0px; 
+ margin-left: 10px;
+ background-color: yellow;
+ vertical-align: top;
+ display: inline-block;
+}
+.subcontents2{
+ height: 200px;
+ width: 210px;
+ margin-top: 10px;
+ margin-right: 10px;
+ margin-bottom: 0px; 
+ margin-left: 0px;
+ background-color: yellow;
+ vertical-align: top;
+ display: inline-block;
+}
+.subcontents3{
+ height: 200px;
+ width: 210px;
+ margin-top: 10px;
+ margin-right: 10px;
+ margin-bottom: 0px; 
+ margin-left: 0px;
+ background-color: yellow;
+ vertical-align: top;
+ display: inline-block;
+}
+#advertisement{
+ height: 120px;
+ width: 660px;
+ margin: 10px;
+ background-color: purple;
+ position: relative;
+ right: 0px;
+ display: inline-block;
+}

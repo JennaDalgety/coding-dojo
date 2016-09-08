@@ -1,0 +1,122 @@
+*{
+ margin: 0px;
+ padding: 0px;
+}
+#wrapper{
+  width: 970px;
+ background-color: white;
+ margin: 0px auto;
+ overflow: hidden;
+ height: auto;
+}
+#header{
+ height: auto;
+ width: 950px;
+ background-color: darkred;
+ margin: 0px;
+ padding-left: 40px;
+ padding-top: 5px;
+ padding-bottom: 5px;
+ display: inline-block;
+ color: white;
+ font-family: arial;
+}
+.tagline{
+  display: inline-block;
+  margin-right: 100px;
+}
+#header li{
+  display: inline-block;
+  font-family: arial;
+  font-size: small;
+  vertical-align: top;
+}
+#header ul:before {
+  content: "Text Size:";
+}
+#header a{
+  color: orange;
+  display: inline-block;
+}
+.rightBox{
+  display: inline-block;
+  position: absolute;
+  text-align: right;
+}
+.search{
+  display: inline-block;
+}
+.search input{
+  background-color: darkred;
+  color: white;
+  display: inline-block;
+}
+#navbar{
+  background-color: lightgray;
+  width: 970px;
+  height: 30px;
+  vertical-align: top;
+  text-decoration: none;
+  padding-top: 10px;
+  font-family: arial;
+  font-size: small;
+}
+#navbar li{
+  display: inline-block;
+}
+#navbar a{
+  color: darkgray;
+  border-right: 1px solid;
+  padding-right: 15px;
+  padding-left: 10px;
+  text-decoration: none;
+}
+#sidebar{
+  background-color: lightgray;
+  width: 200px;
+  height: 250px;
+  display: inline-block;
+  margin: 3%;
+  padding-bottom: 20px;
+}
+#sidebar ul{
+  margin: 15%;
+}
+#sidebar li{
+  margin: 5%;
+  font-family: arial;
+  font-size: small;
+}
+#sidebar a{ 
+  color: darkred;
+}
+#sidebar p{
+  display: inline;
+  color: darkred;
+  padding-right: 3px;
+}
+#mainContent{
+  display: inline-block;
+  vertical-align: top;
+  width: 600px;
+  height: auto;
+  font-family: arial;
+  margin: 3%;
+  font-size: small;
+}
+#mainContent a{
+  color: darkred;
+}
+#mainContent h2, h3, a{
+  color: darkred;
+}
+#mainContent hr{
+  margin: 10px;
+}
+#mainContent ul, ol{
+  margin-left: 40px;
+}
+#mainContent h3{
+  margin-bottom: 20px;
+  margin-top: 20px;
+}

@@ -1,0 +1,237 @@
+*{
+ margin: 0px;
+ padding: 0px;
+}
+#wrapper{
+ width: 970px;
+ background-color: white;
+ margin: 0px auto;
+ overflow: hidden;
+ height: auto;
+}
+#header{
+  height: 125px;
+  width: 400px;
+  background-color: white;
+  display: inline-block;
+  padding-left: 10px;
+}
+#header p{
+  display: inline-block;
+  font-family: arial;
+  font-size: xx-large;
+  vertical-align: top;
+  padding-top: 15px;
+}
+#nav{
+  width: 500px;
+  display: inline-block;
+  vertical-align: top;
+  margin-top: 10px;
+}
+#navbar{
+  background-color: #f8f8f8;
+  width: 405px;
+  height: 30px;
+  vertical-align: top;
+  text-decoration: none;
+  margin-top: 5px;
+  padding-bottom: 5px;
+  font-family: arial;
+  font-size: small;
+  border-radius: 5px;
+  display: inline-block;
+}
+#navbar li{
+  display: inline-block;
+  margin-left: 0px;
+  border-right: 1px solid lightgray;
+}
+#navbar li:last-child{
+  border-right: none;
+}
+#navbar a{
+  color: lightgray;
+  text-decoration: none;
+  padding-right: 10px;
+  padding-left: 10px;
+  display: inline-block;
+}
+#nav button{
+  height: 30px;
+  width: 60px;
+  color: white;
+  background: linear-gradient(#37c2fa, #0e78a6);
+  border-radius: 5px;
+  display: inline-block;
+  padding-bottom: 4px;
+  vertical-align: top;
+  margin-left: 30px;
+  margin-top: 5px;
+}
+#titleBar{
+  height: 70px;
+  width: 950px;
+  padding-left: 8px;
+  background-color: #0e78a6;
+}
+#titleBar h2{
+  color: white;
+  font-family: arial;
+  padding-top: 20px;
+  display: inline-block;
+}
+#sidebar{
+  font-family: arial;
+  width: 250px;
+  height: 600px;
+  display: inline-block;
+  vertical-align: top;
+  margin-top: 100px;
+  margin-left: 10px;
+}
+#sidebar a{
+  text-decoration: none;
+}
+#sidebar p{
+  font-size: smaller;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+h3{
+  color: #0e78a6;
+}
+hr{
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+.button1 button{
+  height: 30px; 
+  width: 240px; 
+  border-radius: 5px; 
+  color: white;
+  background: linear-gradient(#37c2fa, #0e78a6);
+  display: inline-block;
+  padding-bottom: 4px;
+  vertical-align: top;
+  font-size: smaller;
+  margin-bottom: 5px;
+}
+.button2 button{
+  height: 30px; 
+  width: 240px; 
+  border-radius: 5px; 
+  color: white;
+  background: linear-gradient(#fba245, #e44403);
+  display: inline-block;
+  padding-bottom: 4px;
+  vertical-align: top;
+  font-size: smaller;
+}
+.adContainer{
+  background-image: url("/Users/jennadalgety/coding-dojo/css/wordstream/left_content_ad.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 300px; 
+  width: 230px;
+}
+#sidebar hr{
+  margin-bottom: 20px;
+  padding: 0px;
+}
+.adContainer h3{
+  padding-top: 30px;
+  padding-left: 10px;
+}
+.adContainer p{
+  padding-left: 10px;
+}
+.button3 button{
+  height: 30px; 
+  width: 200px; 
+  border-radius: 5px; 
+  color: white;
+  background: linear-gradient(#1c74ab, #0b4064);
+  display: inline-block;
+  padding-bottom: 4px;
+  margin-left: 10px;
+  margin-top: 10px;
+  vertical-align: top;
+  font-size: smaller;
+}
+#mainDiv{
+  width: 680px;
+  margin: 10px;
+  margin-left: 14px;
+  vertical-align: top;
+  display: inline-block;
+}
+#mainTop{
+  width: 675px;
+  height: 100px;
+  font-family: arial;
+  display: inline-block;
+  vertical-align: top;
+  font-size: medium;
+}
+#mainTop a{
+  text-decoration: none;
+  color: #5184a0;
+  vertical-align: 30%
+}
+#info{
+  vertical-align: top;
+  display: inline-block;
+  width: 250px;
+}
+#info h3{
+  margin: 0px;
+}
+#mainContent{
+  height: auto;
+  width: 575px;
+  display: inline-block;
+  margin-top: 30px;
+  font-family: arial;
+  font-size: smaller;
+  position: relative;
+  border-top: 1px solid gray;
+}
+#mainContent ul, li{
+  list-style-type: square;
+  margin-left: 20px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+#mainContent p, h3{
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+#mainAd{
+  border-size: 3px;
+  border-style: solid;
+  border-color: #127bb6;
+  display: inline-block;
+  vertical-align: top;
+  width: 550px;
+  height: 150px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+#mainAd button{
+  height: 30px; 
+  width: 200px;
+  margin-left: 120px;
+  margin-bottom: 10px; 
+  margin-top: 5px;
+  border-radius: 5px; 
+  color: white;
+  background: linear-gradient(#c2db7a, #91b736, #c2db7a);
+}
+#mainAd p, h3{
+  display: inline-block;
+  vertical-align: top;
+}
+#mainAd p{
+  margin-top: -40px;
+}

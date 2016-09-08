@@ -1,0 +1,38 @@
+#wrapper{
+  height: 1000px; 
+}
+#square{
+  width: 150px;
+  height: 150px;
+  background-color: blue;
+}
+#circle{ 
+  margin-top: 10px;
+  background-color: blue;
+  height:150px;
+  width:150px;
+  border-radius:75px;
+  display: inline-block;
+  vertical-align: top;
+}
+#triangle{
+  margin-top: 10px;
+  border-bottom: 150px solid blue;
+  border-left: 100px solid transparent;
+  border-right: 100px solid transparent;
+  width: 0;
+  height: 0;
+}
+#pacman {
+  margin-top: 10px;
+  width: 0px;
+  height: 0px;
+  border-right: 100px solid transparent;
+  border-top: 100px solid blue;
+  border-left: 100px solid blue;
+  border-bottom: 100px solid blue;
+  border-top-left-radius: 100px;
+  border-top-right-radius: 100px;
+  border-bottom-left-radius: 100px;
+  border-bottom-right-radius: 100px;
+}
