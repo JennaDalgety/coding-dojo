@@ -7,3 +7,14 @@
   width: 1200px;
   background-color: lightgray;
 }
+#header{
+  font-family: arial;
+  color: red;
+  height: 50px;
+  width: 1200px;
+  display: inline-block;
+}
+#header ul, li{
+  display: inline-block;
+  padding: 20px;
+}
