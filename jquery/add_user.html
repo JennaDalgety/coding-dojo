@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    #wrapper{
+      height: auto;
+      width: auto;
+    }
+    #submissionList{
+      vertical-align: top;
+      display: inline-block;
+      border: 2px solid black;
+      margin-bottom: 20px;
+    }
+    li{
+      list-style: none;
+    } 
+    .submissions li{
+      display: inline-block;
+      padding-right: 20px;
+    }
+    .submissions li:last-child{
+      padding-right: 40px;
+    }
+    h1{
+      border-bottom: 2px solid black
+    }
+    #submissionForm{
+      vertical-align: top;
+      display: inline-block;
+      text-align: right;
+    }
+    form{
+      vertical-align: top;
+    }
+    input{
+      display: inline;
+      vertical-align: top;
+      margin-left: 20px;
+    }
+    #form{
+      display: inline-block;
+      vertical-align: top;
+    }
+    label{
+      display: block;
+      margin: 10px;
+    }
+    #email{
+      margin-left: 52px;
+    }
+    #contact{
+      margin-left: 29px;
+    }
+    th{
+      padding: 20px;
+    }
+    #formHeader{
+      width: 50%;
+    }
+    
+  </style>
+  <script src="http://code.jquery.com/jquery-2.2.4.js"   integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI=" crossorigin="anonymous"></script>  
+  <script type="text/javascript">
+
+    console.log("jQuery has loaded properly")
+
+    $(document).ready(function(){
+
+      $("form").submit(function(){
+        console.log($(this))
+        
+        var firstName = $("#firstName").val();
+        var lastName = $("#lastName").val();
+        var email = $("#email").val();
+        var contact = $("#contact").val();
+
+        $("tbody").append("<tr><td>"+firstName+"</td><td>"+lastName+"</td><td>"+email+"</td><td>"+contact+"</td></tr>");
+          $("form").trigger("reset")
+        return false;
+      });
+      
+    });
+
+  </script>
+  <title>Adding Users</title>
+</head>
+<body>
+  <div id="wrapper">
+    <div id="submissionList">
+      <table>
+        <thead>
+          <th>First Name</th> 
+          <th>Last Name</th>
+          <th>Email Address</th>
+          <th>Contact #</th>
+        </thead>
+        <tbody>
+        </tbody>
+      </table>
+    </div>
+    <div id="formHeader">
+      <h1>Add User</h1>
+    </div>
+    <div id="submissionForm">
+      <div id="form">
+        <form id="userSignup" action="" name="userSignup">
+          <label>First Name<input id="firstName" type="text" name="First Name"></label>
+          <label>Last Name<input id="lastName" type="text" name="Last Name"></label>
+          <label>Email<input id="email" type="email" name="Email"></label>
+          <label>Contact #<input id="contact" type="text" name="Contact #"></label>
+          <button type="submit">Add User</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

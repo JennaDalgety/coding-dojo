@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" type="text/css" href="http://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.css">
+  <style>
+  .person{
+    border: 8px solid #e33;
+    width: 550px;
+    padding: 12px;
+  }
+  .hidden{
+    display: none;
+  }
+  .contacts{
+    display: inline-block;
+    vertical-align: top;
+    margin-left: 20px;
+  }
+  .form{
+    display: inline-block;
+    vertical-align: top;
+  }
+
+  </style>
+  <script src="http://code.jquery.com/jquery-2.2.4.js"   integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI=" crossorigin="anonymous"></script>  
+  <script type="text/javascript">
+
+    $(document).ready(function(){
+      console.log("jQuery has loaded properly")
+
+      $('.inputForm').submit(function(){
+        console.log("form submitted")
+        var htmlString = "<div class='person'><h4>" + $('#first_name').val() + " " + $('#last_name').val() + "</h4><p>Click for description</p><p class='hidden'>" + $('#description').val() + "</p></div>"
+
+        $('.contacts').append(htmlString);
+        return false;
+      });
+
+      $('.githubForm').submit(function(){
+        console.log("form submitted")
+        $.get('https://api.github.com/users/' + $('#github').val(), function(res){
+          console.log(res);
+          var htmlString = "<div class='person'><img style='height: 50px; width: 50px;' src='" + res.avatar_url + "'><h4>" + res.name + "</h4><p>Click for description</p><p class='hidden'>" + res.bio + "</p></div>"
+
+        $('.contacts').append(htmlString);
+      });
+
+        return false;
+
+      });
+
+      $(document).on('click', '.person', function(){
+        $(this).children().toggle('slow');
+      });
+
+    });
+
+  </script>
+  <title>Contact Card</title>
+</head>
+<body>
+  <div id="wrapper">
+  <div class="form">
+  <form class="inputForm" method="post">
+    <label for="first_name">First Name:
+      <input id="first_name" type="text" name="first_name" value="">
+    </label>
+    <label for="last_name">Last Name:
+      <input id="last_name" type="text" name="last_name" value="">
+    </label>
+    <label for="description">Description:</label>
+    <textarea id="description" name="description" rows="8" cols="40"></textarea>
+    <label for="name">
+      <input type="submit" name="name" value="Add User">
+    </label>
+  </form>
+
+  <form class="githubForm" method="post">
+    <input id="github" type="text" name="github" value="">
+    <input class="button-primary" type="submit" name="name" value="Search Github for user">
+  </form>
+</div>
+  <div class="contacts">
+
+  </div>
+  </div>
+</body>
+</html>

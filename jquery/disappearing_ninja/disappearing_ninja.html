@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    *{
+     margin: 0px;
+     padding: 0px;
+   }
+   #wrapper{
+     width: 970px;
+     background-color: white;
+     margin: 0px auto;
+     overflow: hidden;
+     height: auto;
+   }
+   #kittens1{
+    display: inline-block;
+    vertical-align: top;
+  }
+  #kittens2{
+    display: inline-block;
+    vertical-align: top;
+  }
+  img{
+    padding: 10px;
+  }
+</style>
+<script src="http://code.jquery.com/jquery-2.2.4.js"   integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI=" crossorigin="anonymous"></script>  
+<script type="text/javascript">
+
+  console.log("jQuery has loaded properly")
+
+  $(document).ready(function(){
+    $('img').click(function(){
+      $(this).hide('slow');
+    });
+
+    $('#restore').click(function(){
+      $('img').show('slow')
+    });
+
+  });
+
+</script>
+<title>Disappearing Ninja!</title>
+</head>
+<body>
+  <div id="wrapper">
+    <div id="kittens1">
+      <img id="kittyPic1" src="http://placekitten.com/g/200/200">
+      <img id="kittyPic2" src="http://placekitten.com/g/200/200">
+      <img id="kittyPic3" src="http://placekitten.com/g/200/200">
+      <img id="kittyPic4" src="http://placekitten.com/g/200/200">
+    </div>
+    <div id="kittens2">
+      <img id="kittyPic5" src="http://placekitten.com/g/200/200">
+      <img id="kittyPic6" src="http://placekitten.com/g/200/200">
+      <img id="kittyPic7" src="http://placekitten.com/g/200/200">
+      <img id="kittyPic8" src="http://placekitten.com/g/200/200">
+    </div>
+    <div id="footer">
+      <button id="restore">Restore</button>
+    </div>
+  </div>
+</body>
+</html>

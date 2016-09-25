@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    *{
+     margin: 0px;
+     padding: 0px;
+   }
+   #wrapper{
+     width: 970px;
+     background-color: white;
+     margin: 0px auto;
+     overflow: hidden;
+     height: auto;
+   }
+   img{
+    padding: 5px;
+  }
+</style>
+<script src="http://code.jquery.com/jquery-2.2.4.js"   integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI=" crossorigin="anonymous"></script>  
+<script type="text/javascript">
+
+  console.log("jQuery has loaded properly")
+
+  $(document).ready(function(){
+     
+
+    $("img").hover(function() {
+
+      var originalSource = $(this).attr("src");
+      var secondSource = $(this).attr("data-alt-src");
+
+      $(this).attr("src", secondSource);
+      $(this).attr("data-alt-src", originalSource);
+    });
+
+  });
+
+</script>
+<title>Watch Me Hover!</title>
+</head>
+<body>
+  <div id="wrapper">
+    <div id="layer1">
+      <img class="ninja0" src="ninja0.png" data-alt-src="cat0.png">
+    </div>
+    <div id="layer2">
+      <img class="ninja1" src="ninja1.png" data-alt-src="cat1.png">
+    </div>
+    <div id="layer3">
+      <img class="ninja2" src="ninja2.png" data-alt-src="cat2.png">
+    </div>
+    <div id="layer4">
+      <img class="ninja3" src="ninja3.png" data-alt-src="cat3.png">
+    </div>
+  </div>
+</body>
+</html>

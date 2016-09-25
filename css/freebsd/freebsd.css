@@ -38,6 +38,9 @@
   color: orange;
   display: inline-block;
 }
+.logo{
+  vertical-align: middle;
+}
 .rightBox{
   display: inline-block;
   position: absolute;

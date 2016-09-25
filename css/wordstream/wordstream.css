@@ -16,12 +16,23 @@
   display: inline-block;
   padding-left: 10px;
 }
-#header p{
+.word1{
   display: inline-block;
   font-family: arial;
   font-size: xx-large;
   vertical-align: top;
   padding-top: 15px;
+  font-weight: bold;
+  color: gray;
+}
+.stream2{
+  display: inline-block;
+  font-family: arial;
+  font-size: xx-large;
+  vertical-align: top;
+  padding-top: 15px;
+  font-weight: bold;
+  color: #0081ad;
 }
 #nav{
   width: 500px;
@@ -97,6 +108,12 @@
   font-size: smaller;
   margin-top: 10px;
   margin-bottom: 10px;
+}
+.orange{
+  color: orange;
+}
+.credit{
+  text-align: center;
 }
 h3{
   color: #0e78a6;
@@ -179,6 +196,9 @@ hr{
   color: #5184a0;
   vertical-align: 30%
 }
+.phone{
+  margin-left: 300px;
+}
 #info{
   vertical-align: top;
   display: inline-block;
@@ -234,4 +254,10 @@ hr{
 }
 #mainAd p{
   margin-top: -40px;
+}
+.contentAd{
+  margin-right: 60px;
+}
+.instantAccess{
+  margin-left: 120px;
 }

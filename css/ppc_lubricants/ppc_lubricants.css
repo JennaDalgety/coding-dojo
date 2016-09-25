@@ -47,10 +47,16 @@
   padding-left: 10px;
   text-decoration: none;
 }
+.navbarOne{
+  border-left: 1px solid gray;
+}
 #mainContent{
   padding-left: 30px;
   padding-top: 20px;
   display: inline-block;
+}
+.building{
+  border: 5px solid white;
 }
 .title{
   background-color: #ffc628;
@@ -61,6 +67,9 @@
   margin-left: 10px;
   vertical-align: top;
   padding-top: 5px;
+}
+.about{
+  padding: 5px;
 }
 .copy{
   font-family: arial;

@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    .addClass{font-weight: bold;}
+    .dinner{color: blue; font-size: x-large;}
+    #kittySurprise{display: none}
+    #kittyPicFadeIn{display: none}
+    #kittyPicSlideDown{display: none}
+  </style>
+  <script src="http://code.jquery.com/jquery-2.2.4.js"   integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI="   crossorigin="anonymous"></script>  
+  <script type="text/javascript">
+
+    console.log("jQuery has loaded properly")
+
+    $(document).ready(function(){
+      $( ".popUp" ).click(function() {
+        alert( "You just made something happen!" );
+      });
+
+      $( "#focus" ).focus(function() {
+        $( this ).css('background-color', 'red');
+        console.log('working');
+      });
+
+      $("#boldButton").click(function() {
+        $( "#bold" ).addClass( "addClass" );
+      });
+
+      $("#focus").blur(function() {
+        $( this ).css('height', 'auto');
+      });
+
+      $( "#valButton" ).click(function() {
+        displayVal = $( ".logVal" ).val(); 
+        console.log(displayVal);
+        return false;
+      });
+
+      $("#changeMe").click(function() {
+        $(".changeable").text("This is what I now say!");
+      });
+
+      $("#kitty").attr("title", "The CUTEST Kitty!");
+      $("#kitty").click(function(){  
+        alert($(this).attr('title'));  
+      });
+
+      $(".changeHtml").click(function() {
+        var htmlString = $(this).html();
+        $(this).text(htmlString);
+      });
+
+      $("#dataStore").data("dinner", "macaroni and cheese!");
+      $(".dinner").text( $("#dataStore").data("dinner"));
+
+      $(".beforeText").click(function() {
+        $("#textBefore").before($("#addBefore").text("Now..."));
+      });
+
+      $(".afterText").click(function() {
+        $("#textAfter").after($("#addAfter").text("And this, too!"));
+      });
+      
+      $("#appendMe").click(function(){
+        $(".appendable").append(" And don't forget this!");
+      });
+
+      $("#kittyPop").click(function() {
+        $("#kittySurprise").show("slow");
+      });
+
+      $("#kittySleep").click(function() {
+        $("#kittyBed").hide("slow");
+      });
+
+      $("#kittyToggle").click(function() {
+        $("#kittyToFro").toggle("slow");
+      });
+
+      $("#kittyFadeIn").click(function() {
+        $("#kittyPicFadeIn").fadeIn(2000);
+      });
+
+      $("#kittyFadeOut").click(function() {
+        $("#kittyPicFadeOut").fadeOut(2000);
+      });
+
+      $("#kittySlideDown").click(function() {
+        $("#kittyPicSlideDown").slideDown(1000);
+      });
+
+      $("#kittySlideUp").click(function() {
+        $("#kittyPicSlideUp").slideUp(1000);
+      });
+
+      $("#kittySlideToggle").click(function() {
+        $("#kittyPicSlideToggle").slideToggle(1000);
+      });
+
+    });
+  </script>
+  <title>jQuery Exercises</title>
+</head>
+<body>
+  <p>Click this button to pop up a special message</p>
+  <div class="popUp">
+    <button type="button">Special Message</button>
+  </div>
+  <hr>
+  <p>Check out '.focus' in action</p>
+  <form>
+    <input id="focus" type="text" value="Try writing in me!">
+  </form>
+  <hr>
+  <p>Guess which line</p>
+  <p>Has the .addClass on it?</p>
+  <p id="bold">Hint: it makes the text bold!</p>
+  <button id="boldButton">Click me to see!</button>
+  <hr>
+  <form>
+    <select class="logVal">
+      <option>This</option>
+      <option>Demonstrates</option>
+      <option>.val</option>
+    </select>
+    <button id="valButton">Submit</button>
+  </form>
+  <hr>
+  <p class="changeable">This is what I start to say!</p>
+  <button id="changeMe">Click me for some .text action!</button>
+  <hr>
+  <p>This little kitty didn't have a title when we got it from placekitten.com.  Click the image to see kitty's title now!</p>
+  <img id="kitty" src="http://placekitten.com/g/200/300">
+  <hr>
+  <p class="changeHtml">Click to view some <span id="tag">html!</span>
+  </p>
+  <hr>
+  <div id="dataStore">
+    Tonight I want to eat <span class="dinner"></span>
+  </div>
+  <hr>
+  <div id="textBefore">
+    <p><span id="addBefore"></span>I say this</p>
+    <button class="beforeText">Click Me!</button>
+  </div>
+  <hr>
+  <div id="textAfter">
+    <p><span id="addAfter"></span>I say this</p>
+    <button class="afterText">Click Me!</button>
+  </div>
+  <hr>
+  <p class="appendable">This is what I say!</p>
+  <button id="appendMe">Click me for some .append action!</button>
+  <hr>
+  <button id="kittyPop">Click for a surprise!</button>
+  <img id="kittySurprise" src="http://placekitten.com/g/100/200">
+  <hr>
+  <button id="kittySleep">Click to put kitty to bed!</button>
+  <img id="kittyBed" src="http://placekitten.com/g/300/200">
+  <hr>
+  <button id="kittyToggle">Click me to have kitty run away and come back!</button>
+  <img id="kittyToFro" src="http://placekitten.com/g/600/200">
+  <hr>
+  <button id="kittyFadeIn">Click me to bring in the kitty!</button>
+  <img id="kittyPicFadeIn" src="http://placekitten.com/g/400/200">
+  <hr>
+  <button id="kittyFadeOut">Click me to let the kitty out!</button>
+  <img id="kittyPicFadeOut" src="http://placekitten.com/g/500/200">
+  <hr>
+  <button id="kittySlideDown">Kitty's on a Slip 'N Slide!</button>
+  <img id="kittyPicSlideDown" src="http://placekitten.com/g/500/300">
+  <hr>
+  <button id="kittySlideUp">Where's He Going?</button>
+  <img id="kittyPicSlideUp" src="http://placekitten.com/g/200/100">
+  <hr>
+  <button id="kittySlideToggle">Now You Get To Choose!</button>
+  <img id="kittyPicSlideToggle" src="http://placekitten.com/g/700/200">
+  <hr>
+</body>
+</html>
