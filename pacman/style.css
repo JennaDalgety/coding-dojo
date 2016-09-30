@@ -40,7 +40,7 @@ div#ghost{
   height: 20px;
   position: absolute;
 }
-/*div#ghost2{
+div#ghost2{
   background: url('pinky.png');
   background-repeat: no-repeat;
   background-position: center;
@@ -57,7 +57,7 @@ div#ghost3{
   width: 20px;
   height: 20px;
   position: absolute;
-}*/
+}
 @font-face {
   font-family: 'PressStart2P';
   src: url(PressStart2P.ttf);

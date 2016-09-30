@@ -55,13 +55,18 @@
 
       var ghost = {
         x:12,
-        y:9
+        y:2
       }
 
-      // var ghost2 = {
-      //   x:20,
-      //   y:9
-      // }
+      var ghost2 = {
+        x:9,
+        y:11
+      }
+
+      var ghost3 = {
+        x:12,
+        y:11
+      }
 
       var cherry = {
         x:20,
@@ -97,6 +102,16 @@
         document.getElementById('ghost').style.left = ghost.x*20+"px";
       }
 
+      function displayGhost2(){
+        document.getElementById('ghost2').style.top = ghost2.y*20+"px";
+        document.getElementById('ghost2').style.left = ghost2.x*20+"px";
+      }
+
+      function displayGhost3(){
+        document.getElementById('ghost3').style.top = ghost3.y*20+"px";
+        document.getElementById('ghost3').style.left = ghost3.x*20+"px";
+      }
+
       function displayCherry(){
         document.getElementById('cherry').style.top = cherry.y*20+"px";
         document.getElementById('cherry').style.left = cherry.x*20+"px";
@@ -106,7 +121,7 @@
         var random = Math.floor(Math.random() * 4) + 37;
         switch(random){
           case 37:
-          if(world[ghost.y][ghost.x-1] != 2){
+          if(world[ghost.y][ghost.x-1] !== 2){
             ghost.x--;
             if (ghost.x<0){
               ghost.x=world.length-1;
@@ -114,12 +129,12 @@
           }
           break;
           case 38:
-          if(world[ghost.y-1][ghost.x] != 2){
+          if(world[ghost.y-1][ghost.x] !== 2){
             ghost.y--;
           }
           break;
           case 39:
-          if(world[ghost.y][ghost.x+1] != 2){
+          if(world[ghost.y][ghost.x+1] !== 2){
             ghost.x++;
             if (ghost.x>world.length-1){
               ghost.x=0;
@@ -127,7 +142,7 @@
           }
           break;
           case 40:
-          if(world[ghost.y+1][ghost.x] != 2){
+          if(world[ghost.y+1][ghost.x] !== 2){
             ghost.y++;
           }
           break;
@@ -141,6 +156,98 @@
         displayScore();
         if(gameActive){
           displayGhost();
+          displayGhost2();
+          displayGhost3();
+          displayWorld();
+        }
+      }
+
+      function moveGhost2(){
+        var random = Math.floor(Math.random() * 4) + 37;
+        switch(random){
+          case 37:
+          if(world[ghost2.y][ghost2.x-1] !== 2){
+            ghost2.x--;
+            if (ghost2.x<0){
+              ghost2.x=world.length-1;
+            }
+          }
+          break;
+          case 38:
+          if(world[ghost2.y-1][ghost2.x] !== 2){
+            ghost2.y--;
+          }
+          break;
+          case 39:
+          if(world[ghost2.y][ghost2.x+1] !== 2){
+            ghost2.x++;
+            if (ghost2.x>world.length-1){
+              ghost2.x=0;
+            }
+          }
+          break;
+          case 40:
+          if(world[ghost2.y+1][ghost2.x] !== 2){
+            ghost2.y++;
+          }
+          break;
+        }
+        if(ghost2.y === pacman.y && ghost2.x === pacman.x){
+          lives -= 1;
+        }
+        if(lives === 0){
+          gameActive = false;
+        }
+        displayScore();
+        if(gameActive){
+          displayGhost();
+          displayGhost2();
+          displayGhost3();
+          displayWorld();
+        }
+      }
+
+      function moveGhost3(){
+        var random = Math.floor(Math.random() * 4) + 37;
+        switch(random){
+          case 37:
+          if(world[ghost3.y][ghost3.x-1] !== 2){
+            ghost3.x--;
+            if (ghost3.x<0){
+              ghost3.x=world.length-1;
+            }
+          }
+          break;
+          case 38:
+          if(world[ghost3.y-1][ghost3.x] !== 2){
+            ghost3.y--;
+          }
+          break;
+          case 39:
+          if(world[ghost3.y][ghost3.x+1] !== 2){
+            ghost3.x++;
+            if (ghost3.x>world.length-1){
+              ghost3.x=0;
+            }
+          }
+          break;
+          case 40:
+          if(world[ghost3.y+1][ghost3.x] !== 2){
+            ghost3.y++;
+          }
+          break;
+        }
+        if(ghost3.y === pacman.y && ghost3.x === pacman.x){
+          lives -= 1;
+        }
+        if(lives === 0){
+          gameActive = false;
+        }
+        displayScore();
+        if(gameActive){
+          displayGhost();
+          displayGhost2();
+          displayGhost3();
           displayWorld();
         }
       }
@@ -182,12 +289,16 @@
         displayScore();
         if(gameActive){
           displayGhost();
+          displayGhost2();
+          displayGhost3();
           displayWorld();
           displayCherry();
         }
       }
 
       setInterval(moveGhost, 500);
+      setInterval(moveGhost2, 500);
+      setInterval(moveGhost3, 500);
       setInterval(moveCherry, 500);
 
       function displayScore(){
@@ -199,6 +310,8 @@
       displayPacman();
       displayScore();
       displayGhost();
+      displayGhost2();
+      displayGhost3();
       moveGhost();
       moveCherry();
 
@@ -235,6 +348,8 @@
           displayScore();
           displayPacman();
           displayGhost();
+          displayGhost2();
+          displayGhost3();
           displayCherry();
         }
       }
@@ -251,6 +366,10 @@
   <div id="pacman"></div>
 
   <div id="ghost"></div>
+
+  <div id="ghost2"></div>
+
+  <div id="ghost3"></div>
 
   <div id="cherry"></div>
 
