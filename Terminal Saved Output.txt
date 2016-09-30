@@ -1,0 +1,73 @@
+Last login: Thu Sep  8 20:24:51 on ttys000
+Jennas-MacBook-Pro:~ jennadalgety$ desktop
+-bash: desktop: command not found
+Jennas-MacBook-Pro:~ jennadalgety$ cd desktop
+Jennas-MacBook-Pro:desktop jennadalgety$ mkdir test
+Jennas-MacBook-Pro:desktop jennadalgety$ cd test
+Jennas-MacBook-Pro:test jennadalgety$ touch index.html
+Jennas-MacBook-Pro:test jennadalgety$ li
+-bash: li: command not found
+Jennas-MacBook-Pro:test jennadalgety$ list
+-bash: list: command not found
+Jennas-MacBook-Pro:test jennadalgety$ touch styles.css
+Jennas-MacBook-Pro:test jennadalgety$ touch commands.txt
+Jennas-MacBook-Pro:test jennadalgety$ cp index.html index_2.html
+Jennas-MacBook-Pro:test jennadalgety$ cd/desktop
+-bash: cd/desktop: No such file or directory
+Jennas-MacBook-Pro:test jennadalgety$ cd..
+-bash: cd..: command not found
+Jennas-MacBook-Pro:test jennadalgety$ cd.
+-bash: cd.: command not found
+Jennas-MacBook-Pro:test jennadalgety$ cd .
+Jennas-MacBook-Pro:test jennadalgety$ cd ..
+Jennas-MacBook-Pro:desktop jennadalgety$ mkdir destination
+Jennas-MacBook-Pro:desktop jennadalgety$ mv ~/Desktop/test/index_2.html /Desktop/destination
+mv: rename /Users/jennadalgety/Desktop/test/index_2.html to /Desktop/destination: No such file or directory
+Jennas-MacBook-Pro:desktop jennadalgety$ mv /Desktop/test/index_2.html /Desktop/destination
+mv: rename /Desktop/test/index_2.html to /Desktop/destination: No such file or directory
+Jennas-MacBook-Pro:desktop jennadalgety$ mv ~/desktop/test/index_2.html /desktop/destination
+mv: rename /Users/jennadalgety/desktop/test/index_2.html to /desktop/destination: No such file or directory
+Jennas-MacBook-Pro:desktop jennadalgety$ mv ~/Users/jennadalgety/desktop/test/index_2.html /Users/jennadalgety//desktop/destination
+mv: rename /Users/jennadalgety/Users/jennadalgety/desktop/test/index_2.html to /Users/jennadalgety//desktop/destination/index_2.html: No such file or directory
+Jennas-MacBook-Pro:desktop jennadalgety$ mv ~/Desktop/test/index_2.html /destination
+mv: rename /Users/jennadalgety/Desktop/test/index_2.html to /destination: Permission denied
+Jennas-MacBook-Pro:desktop jennadalgety$ ls
+Pre-Bootcamp-Shedule.pdf	destination			lrthw.rb			test				untitled.rb
+Jennas-MacBook-Pro:desktop jennadalgety$ sudo mv ~/Desktop/test/index_2.html /destination
+Password:
+Jennas-MacBook-Pro:desktop jennadalgety$ cd test
+Jennas-MacBook-Pro:test jennadalgety$ touch index_2.html
+Jennas-MacBook-Pro:test jennadalgety$ cd
+Jennas-MacBook-Pro:~ jennadalgety$ cd desktop
+Jennas-MacBook-Pro:desktop jennadalgety$ sudo mv ~/desktop/test/index_2 /destination
+mv: /Users/jennadalgety/desktop/test/index_2: No such file or directory
+Jennas-MacBook-Pro:desktop jennadalgety$ sudo mv ~/desktop/test/index_2.html /destination
+Jennas-MacBook-Pro:desktop jennadalgety$ cd test
+Jennas-MacBook-Pro:test jennadalgety$ touch index_2.html
+Jennas-MacBook-Pro:test jennadalgety$ 
+Jennas-MacBook-Pro:test jennadalgety$ mv ~/Desktop/test/index_2.html /destination/index_2.html
+mv: rename /Users/jennadalgety/Desktop/test/index_2.html to /destination/index_2.html: Not a directory
+Jennas-MacBook-Pro:test jennadalgety$ cd
+Jennas-MacBook-Pro:~ jennadalgety$ desktop
+-bash: desktop: command not found
+Jennas-MacBook-Pro:~ jennadalgety$ cd desktop
+Jennas-MacBook-Pro:desktop jennadalgety$ mv ~/Desktop/test/index_2.html /destination/index_2.html
+mv: rename /Users/jennadalgety/Desktop/test/index_2.html to /destination/index_2.html: Not a directory
+Jennas-MacBook-Pro:desktop jennadalgety$ mv ~/Desktop/test/index_2.html /Desktop/destination/index_2.html
+mv: rename /Users/jennadalgety/Desktop/test/index_2.html to /Desktop/destination/index_2.html: No such file or directory
+Jennas-MacBook-Pro:desktop jennadalgety$ cd
+Jennas-MacBook-Pro:~ jennadalgety$ mv ~/Desktop/test/index_2.html /Desktop/decdstination/index_2.html
+mv: rename /Users/jennadalgety/Desktop/test/index_2.html to /Desktop/decdstination/index_2.html: No such file or directory
+Jennas-MacBook-Pro:~ jennadalgety$ mv ~/Desktop/test/index_2.html /Desktop/destination/index_2.html
+mv: rename /Users/jennadalgety/Desktop/test/index_2.html to /Desktop/destination/index_2.html: No such file or directory
+Jennas-MacBook-Pro:~ jennadalgety$ desktop
+-bash: desktop: command not found
+Jennas-MacBook-Pro:~ jennadalgety$ cd desktop
+Jennas-MacBook-Pro:desktop jennadalgety$ mv ~/Desktop/test/index_2.html ~/Users/jennadalgety/Desktop/destination
+mv: rename /Users/jennadalgety/Desktop/test/index_2.html to /Users/jennadalgety/Users/jennadalgety/Desktop/destination: No such file or directory
+Jennas-MacBook-Pro:desktop jennadalgety$ mv ~/Desktop/test/index_2.html ~/Desktop/destination
+Jennas-MacBook-Pro:desktop jennadalgety$ cd test
+Jennas-MacBook-Pro:test jennadalgety$ rm styles.css
+Jennas-MacBook-Pro:test jennadalgety$ rm -rf /Desktop/destination
+Jennas-MacBook-Pro:test jennadalgety$ rm -rf ~/Desktop/destination
+Jennas-MacBook-Pro:test jennadalgety$ 
