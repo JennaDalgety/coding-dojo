@@ -40,6 +40,24 @@ div#ghost{
   height: 20px;
   position: absolute;
 }
+/*div#ghost2{
+  background: url('pinky.png');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  width: 20px;
+  height: 20px;
+  position: absolute;
+}
+div#ghost3{
+  background: url('clyde.png');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  width: 20px;
+  height: 20px;
+  position: absolute;
+}*/
 @font-face {
   font-family: 'PressStart2P';
   src: url(PressStart2P.ttf);

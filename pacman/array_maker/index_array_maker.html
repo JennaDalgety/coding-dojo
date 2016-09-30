@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Game Board Array Maker</title>
+  <meta charset="utf-8">
+  <meta name="description" content="Tool to Produce a 2-D Array">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous" rel="stylesheet" />
+  <link rel="stylesheet" type="text/css" href="normalize.css">
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <script>
+  $(document).ready(function() {
+    console.log('jQuery Loaded.')
+    // global declaration of gameArray for use everywhere
+    var gameArray = [];
+    var x_last=Number.INFINITY;
+    var y_last=Number.INFINITY;
+    var x = 0;
+    var y = 0;
+      //
+      //
+      // $('.render').click(function() {
+      //   advancedRender()
+      //   $('.array').toggleClass('adv');
+      // });
+      $('#showArray').click(function() {
+        var h_avail = $('.gameboard').css('height');
+        var w_avail = $('.gameboard').css('width');
+        $('.code').css('height',h_avail);
+        $('.code').css('width',w_avail);
+        var array="[";
+        for (var i=0; i < Number(y); i++) {
+          var row="[";
+          for (var j=0; j<Number(x); j++) {
+            row = row + gameArray[i][j];
+            if (Number(j)<Number(x)-1) {
+              row=row+",";
+            }
+          }
+          row = row + "]";
+          if (i<Number(y)-1) {
+            row=row+",";
+          }
+          row = row + "<br>";
+          array=array+row;
+        }
+        array=array+"]";
+        array = "// array dimensions: "+x+" by "+y+"<br/>"+array;
+        $('.code').html(array);
+        $('.code').toggle();
+      });
+      $('input:radio[name=mode]').change(function() {
+        if ($("input:radio[name=mode]:checked").val() == 'advanced') {
+          advancedRender();
+          $('.array').addClass('adv');
+        }
+        else {
+          simpleRender();
+          $('.array').removeClass('adv');
+        }
+      });
+      //
+      // toggle wall and empty classes on a cell
+      //  (add the listener after the grid is drawn in html)
+      $(document).on('click','.cell',function() {
+        if ($("input:radio[name=mode]:checked").val() == 'simple') {
+          var j = $(this).attr('x');
+          var k = $(this).attr('y');
+
+          if (gameArray[k][j] == 'empty') {
+            gameArray[k][j] = 'wall';
+          }
+          else {
+            gameArray[k][j] = 'empty';
+          }
+          $(this).toggleClass('empty');
+          $(this).toggleClass('wall');
+          drawGrid();
+      }
+        else {
+          var j = Number($(this).attr('x'));
+          var k = Number($(this).attr('y'));
+          if (gameArray[k][j] !== 'empty') {
+            gameArray[k][j] = 'empty';
+          }
+          else {
+            gameArray[k][j] = 'wall';
+          }
+          var tmpcell = gameArray[k][j];
+          //  re-assess the 9 boxes that surround our changed box
+          for (var l = -1; l <= 1; l++) {  // l is y bounding box offset
+            var zzy=k+l;
+            if (k + l >= 0 && k + l < Number(y)) {
+              for (var m = -1; m <= 1; m++) {
+                if (j+m >=0 && j+m < (Number(x)-1)) {// m is x bounding box
+                  var zzz=j+m;
+                  var before = gameArray[k+l][j+m];
+                  var after = advEval(k+l,j+m,Number(y)-1,Number(x)-1);
+                  gameArray[k+l][j+m] = after;
+                }
+              }
+            }
+          }
+          drawGrid();
+        }
+      });
+      //
+      // take inputs from user on grid width and height
+      $('.drawgrid').click(function() {
+            x = $('#x').val();
+            y = $('#y').val();
+            if (!gameArray.length) {
+              if (x !== 0 && y !== 0) {
+                setGrid(x,y);
+                x_last = x;
+                y_last = y;
+                drawGrid();
+              }
+            }
+            else {
+              console.log('Need to adjust grid size?')
+              for (var i=0; i < gameArray.length; i++) {
+              if (x !== x_last || y !== y_last) {
+                adjustGrid(x,y);
+              }
+              x_last = x;
+              y_last = y;
+              drawGrid();
+              }
+            }
+          });
+          //
+          //
+          //
+          function advEval( y, x, y_max, x_max ) {
+            var cellVal=0;
+            var cell='empty';
+            // only check cells that are not empty
+            if (gameArray[y][x] !== 'empty') {
+              // the cell above is wall
+              if (y>0 && gameArray[y-1][x] !== 'empty') {
+                  cellVal=cellVal+1;
+              }
+              // the cell below is wall
+              if (y !== (y_max-1) && gameArray[y+1][j] !== 'empty') {
+                  cellVal=cellVal+11;
+              }
+              // the cell to the left is wall
+              if (x > 0 && gameArray[y][x-1] !== 'empty') {
+                  cellVal=cellVal+3;
+              }
+              // the cell to the right is wall
+              if (x !== (x_max-1) && gameArray[y][x+1] !== 'empty') {
+                  cellVal=cellVal+5;
+              }
+              switch (cellVal) {
+                case 0:
+                  cell='block';
+                  break;
+                case 1:
+                  cell='bottom';
+                  break;
+                case 3:
+                  cell='right';
+                  break;
+                case 4:
+                  cell='brc';
+                  break;
+                case 5:
+                  cell='left';
+                  break;
+                case 6:
+                  cell='blc';
+                  break;
+                case 8:
+                  cell='horz';
+                  break;
+                case 9:
+                  cell='tdown';
+                  break;
+                case 11:
+                  cell='top';
+                  break;
+                case 12:
+                  cell='vert';
+                  break;
+                case 14:
+                  cell='trc';
+                  break;
+                case 15:
+                  cell='tright';
+                  break;
+                case 16:
+                  cell='tlc';
+                  break;
+                case 17:
+                  cell='tleft';
+                  break;
+                case 19:
+                  cell='tup';
+              }
+            }
+          return(cell);
+          }
+          //
+          //
+          function advancedRender() {
+
+            console.log('render advanced',x,y, x_last,y_last)
+            for (var i=0; i < gameArray.length; i++) {
+            }
+            if (x !== 0 && y !== 0) {
+              var i_max = gameArray.length;
+
+              for (var i=0; i<i_max; i++) {
+                var rowArray = gameArray[i];
+                var j_max = rowArray.length;
+
+                for (j=0; j<j_max; j++) {
+                  var newClass = advEval(i,j,i_max,j_max);
+                  rowArray[j] = newClass;
+                }
+              }
+            drawGrid();
+            $('.message').html('');
+            }
+            else {
+              $('.message').html('No game board grid defined, yet!');
+            }
+            return(false);
+          }
+          //
+          //
+          function simpleRender() {
+            function simpleEval(i,j) {
+              var cell='empty';
+              if (gameArray[i][j] !== 'empty') {
+                cell='wall';
+              }
+            return(cell);
+            }
+            console.log('render simple',x,y, x_last,y_last)
+            for (var i=0; i < gameArray.length; i++) {
+            }
+            if (x !== 0 && y !== 0) {
+              var i_max = gameArray.length;
+
+              for (var i=0; i<i_max; i++) {
+                var rowArray = gameArray[i];
+                var j_max = rowArray.length;
+
+                for (j=0; j<j_max; j++) {
+                  var newClass = simpleEval(i,j);
+                  rowArray[j] = newClass;
+                }
+              }
+            drawGrid();
+            $('.message').html('');
+
+            }
+            else {
+              $('.message').html('No game board grid defined, yet!');
+            }
+            return(false);
+          }
+          //
+          //
+          function adjustGrid() {
+            if (x !== 0 && y !== 0) {
+              // NOT going to erase anything they may have drawn
+              // add/subtract from array on right and bottom
+              for (var i = 0; i < gameArray.length; i++) {
+
+                if (Number(x_last) !== Number(x)) {
+                  rowArray = [];
+                  rowArray = gameArray[i];
+                  if (Number(x) > Number(x_last)) {  // add to rows in existing array
+                    for (var j = 0; j < (x - x_last); j++) {
+                       rowArray.push('empty');
+                     }
+                  }
+                  else {
+                    rowArray.length = x;  // adjust rowArray.length down
+                  }
+                }
+              }
+              if ( Number(y) < Number(y_last) ) {    // adjust gameArray.length down
+                gameArray.length = y;
+              }
+              else {               // add rows of length "new" x
+                for (var i = 0; i < (y - y_last); i++) {
+                    gameArray.push(setRow(x));
+                }
+              }
+            }
+          }
+          function setRow(x) {
+            var rowArray=[];
+            for (var i=0; i < x; i++) {
+              rowArray.push("empty");
+            }
+          return(rowArray)
+          }
+          function setGrid(x,y) {
+            for (var i = 0; i < y; i++) {
+              gameArray.push(setRow(x));
+            }
+          }
+          //
+          //
+          //
+          function drawGrid(width,height) {
+            var w_avail = $('.gameboard').css('width');
+            w_avail = w_avail.replace('px','');
+            // var w_avail=$(window).width();
+            var h_avail = $('.gameboard').css('height');
+            h_avail = h_avail.replace('px','');
+
+            // empty the html in .array
+            $('.array').html("");
+            var htmlGrid='';
+            for (var i=0; i < gameArray.length; i++) {
+            }
+            var height = gameArray.length;
+            for (var i=0; i < gameArray.length; i++) {
+              var row = '<div class="myRow">'; // start the myRow div
+              var rowArray = gameArray[i];
+              for (var j = 0; j < rowArray.length; j++) {
+                row = row + '<div class="cell ' + gameArray[i][j] + '" x='+j+' y='+i+'></div>'; //close each div
+              }
+              row = row + "</div>\n"; // close the .myRow div
+              htmlGrid = htmlGrid + row;
+            }
+            var width = rowArray.length;
+            $('.array').html(htmlGrid);
+            var cell_size = Math.floor(w_avail/width);
+            if (h_avail/height < cell_size) {
+              cell_size = Math.floor(h_avail/height);
+            }
+            var px=cell_size+'px';
+            $('.myRow').css('height',px);
+            $('.myRow div').css('height',px);
+            $('.myRow div').css('width',px);
+          }
+          //
+          //
+          //
+  })
+  </script>
+</head>
+<body>
+  <!-- <div class="menu"></div> -->
+  <div class="container">
+    <div class="gameboard">
+      <div class="array">
+      </div>
+      <div class='code'>
+      </div>
+    </div>
+    <div class="controls">
+      <form>
+        <label for='x'>X:</label><input id='x' type='number'/>
+        <br><label for='y'>Y:</label><input id='y' type='number'/>
+        <button type='button' class="drawgrid">Draw Grid</button>
+        <input id="#advanced" type="radio" value='advanced' name="mode">Advanced<br>
+        <input id="#simple" type="radio" name="mode" value='simple' checked="checked" value="on">Simple<br>
+        <span class='message'>Messages:</span>
+        <button type='button' id="showArray">Show Array</button>
+      </form>
+    </div>
+  </div>
+</body>
+</html>
