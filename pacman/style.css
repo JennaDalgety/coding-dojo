@@ -70,3 +70,12 @@ div#score{
   padding: 7px;
   text-align: center;
 }
+div#cherry{
+  background: url('cherry.jpg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  width: 20px;
+  height: 20px;
+  position: absolute;
+}

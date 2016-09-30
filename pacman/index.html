@@ -56,7 +56,17 @@
       var ghost = {
         x:12,
         y:9
-      };
+      }
+
+      // var ghost2 = {
+      //   x:20,
+      //   y:9
+      // }
+
+      var cherry = {
+        x:20,
+        y:20
+      }
 
       function displayWorld(){
         var output = '';
@@ -85,6 +95,11 @@
       function displayGhost(){
         document.getElementById('ghost').style.top = ghost.y*20+"px";
         document.getElementById('ghost').style.left = ghost.x*20+"px";
+      }
+
+      function displayCherry(){
+        document.getElementById('cherry').style.top = cherry.y*20+"px";
+        document.getElementById('cherry').style.left = cherry.x*20+"px";
       }
 
       function moveGhost(){
@@ -130,7 +145,50 @@
         }
       }
 
+      function moveCherry(){
+        var random = Math.floor(Math.random() * 4) + 37;
+        switch(random){
+          case 37:
+          if(world[cherry.y][cherry.x-1] != 2){
+            ghost.x--;
+            if (cherry.x<0){
+              cherry.x=world.length-1;
+            }
+          }
+          break;
+          case 38:
+          if(world[cherry.y-1][cherry.x] != 2){
+            cherry.y--;
+          }
+          break;
+          case 39:
+          if(world[cherry.y][cherry.x+1] != 2){
+            cherry.x++;
+            if (cherry.x>world.length-1){
+              cherry.x=0;
+            }
+          }
+          break;
+          case 40:
+          if(world[cherry.y+1][cherry.x] != 2){
+            cherry.y++;
+          }
+          break;
+        }
+        if(cherry.y === pacman.y && cherry.x === pacman.x){
+           score += 500;
+           $('#cherry').hide()
+        }
+        displayScore();
+        if(gameActive){
+          displayGhost();
+          displayWorld();
+          displayCherry();
+        }
+      }
+
       setInterval(moveGhost, 500);
+      setInterval(moveCherry, 500);
 
       function displayScore(){
         document.getElementById('points').innerHTML = score;
@@ -142,6 +200,7 @@
       displayScore();
       displayGhost();
       moveGhost();
+      moveCherry();
 
       document.onkeydown = function(e){
         if(e.keyCode == 37 && world[pacman.y][pacman.x-1] != 2){
@@ -176,6 +235,7 @@
           displayScore();
           displayPacman();
           displayGhost();
+          displayCherry();
         }
       }
 
@@ -191,6 +251,8 @@
   <div id="pacman"></div>
 
   <div id="ghost"></div>
+
+  <div id="cherry"></div>
 
   <div id="score">
     <p>Score: <span id="points"></span></p>
