@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" type="text/css" href="http://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.css">
+  <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.0/themes/smoothness/jquery-ui.css">
+  <style>
+
+   #accordion{
+    width: 500px;
+    display: inline-block;
+    vertical-align: top;
+  }
+
+  #tabs{
+    width: 500px;
+    display: inline-block;
+    vertical-align: top;
+  }
+
+  </style>
+  <script src="http://code.jquery.com/jquery-2.2.4.js"   integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI=" crossorigin="anonymous"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.0/jquery-ui.min.js"></script>  
+  <script type="text/javascript">
+
+    $(document).ready(function(){
+      console.log("jQuery has loaded properly")
+
+       $( "#accordion" ).accordion({
+        heightStyle: "content"
+      });
+      $("#date").datepicker();
+      $( "#tabs" ).tabs({
+        event: "mouseover"
+      });
+
+    });
+
+    </script>
+  <title>Accordion and Tab Demo</title>
+</head>
+<body>
+
+<div id="accordion">
+  <h3>Bacon</h3>
+  <div>
+    <p>
+    Spicy jalapeno bacon ipsum dolor amet ullamco ad magna, turkey nisi jerky chicken kielbasa cow. Short ribs porchetta bacon, velit capicola ham est. Consectetur kevin enim, tri-tip adipisicing excepteur kielbasa jowl aute. Ribeye strip steak aliqua ham hock, culpa aute aliquip. Incididunt andouille anim et.
+    </p>
+    <input type="text" id="date">
+  </div>
+  <h3>More Bacon</h3>
+  <div>
+    <p>
+    In sirloin voluptate anim pastrami, fatback aliquip irure short loin aliqua. Lorem mollit fatback ipsum, ut ut pork belly boudin meatloaf alcatra sed prosciutto pork culpa. Ut occaecat t-bone chicken, ham reprehenderit pastrami pork belly sausage nulla meatball. Pork beef ribs cillum cupim, eu proident eiusmod laboris. Exercitation chicken laboris, dolore incididunt biltong cupim. Ex brisket cow, spare ribs frankfurter sirloin filet mignon commodo.
+    </p>
+  </div>
+  <h3>Even More Bacon</h3>
+  <div>
+    <p>
+    Kevin commodo frankfurter, pork loin minim doner tail proident corned beef voluptate pork belly. Shoulder prosciutto tenderloin biltong, cupidatat officia ground round bresaola sed. Sausage beef ribs sunt hamburger incididunt turkey pig do strip steak magna biltong. Meatball rump landjaeger ea eu nisi aliquip ad. Laboris fugiat anim sunt, nulla sint jerky alcatra veniam salami ea tenderloin. Excepteur venison exercitation minim doner magna flank officia dolor esse boudin cupidatat consectetur. Fugiat pancetta occaecat t-bone culpa, ad aliquip capicola sausage pork veniam laborum.
+    </p>
+    <ul>
+      <li>Bacon!</li>
+      <li>Pancetta!</li>
+      <li>Sirloin!</li>
+    </ul>
+  </div>
+  <h3>THE MOST BACON!</h3>
+  <div>
+    <p>
+    Strip steak labore beef, qui pork veniam ut leberkas meatball ribeye aute ad. Adipisicing sausage landjaeger spare ribs, culpa esse ground round filet mignon venison. Rump ad biltong ipsum shank, picanha t-bone sed consectetur. Pork chop minim flank, aliquip sunt id dolore pork belly biltong shoulder. Bacon brisket cow sausage ea alcatra reprehenderit id cillum excepteur rump fugiat ullamco chicken aute. Dolore jowl aliquip esse doner ex, venison frankfurter culpa veniam. Turducken voluptate tenderloin in nostrud frankfurter turkey enim tri-tip filet mignon fatback mollit.
+  </div>
+</div>
+
+<div id="tabs">
+  <ul>
+    <li><a href="#tabs-1">Side Bacon</a></li>
+    <li><a href="#tabs-2">Back Bacon</a></li>
+    <li><a href="#tabs-3">Butt Bacon</a></li>
+  </ul>
+  <div id="tabs-1">
+    <p>Spicy jalapeno bacon ipsum dolor amet ullamco ad magna, turkey nisi jerky chicken kielbasa cow. Short ribs porchetta bacon, velit capicola ham est. Consectetur kevin enim, tri-tip adipisicing excepteur kielbasa jowl aute. Ribeye strip steak aliqua ham hock, culpa aute aliquip. Incididunt andouille anim et.</p>
+  </div>
+  <div id="tabs-2">
+    <p>Morbi tincidunt, dui sit amet facilisis feugiat, odio metus gravida ante, ut pharetra massa metus id nunc. Duis scelerisque molestie turpis. Sed fringilla, massa eget luctus malesuada, metus eros molestie lectus, ut tempus eros massa ut dolor. Aenean aliquet fringilla sem. Suspendisse sed ligula in ligula suscipit aliquam. Praesent in eros vestibulum mi adipiscing adipiscing. Morbi facilisis. Curabitur ornare consequat nunc. Aenean vel metus. Ut posuere viverra nulla. Aliquam erat volutpat. Pellentesque convallis. Maecenas feugiat, tellus pellentesque pretium posuere, felis lorem euismod felis, eu ornare leo nisi vel felis. Mauris consectetur tortor et purus.</p>
+  </div>
+  <div id="tabs-3">
+  <p>In sirloin voluptate anim pastrami, fatback aliquip irure short loin aliqua. Lorem mollit fatback ipsum, ut ut pork belly boudin meatloaf alcatra sed prosciutto pork culpa. Ut occaecat t-bone chicken, ham reprehenderit pastrami pork belly sausage nulla meatball. Pork beef ribs cillum cupim, eu proident eiusmod laboris. Exercitation chicken laboris, dolore incididunt biltong cupim. Ex brisket cow, spare ribs frankfurter sirloin filet mignon commodo.
+  </div>
+</div>
+  
+</body>
+</html>
