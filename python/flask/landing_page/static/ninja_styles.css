@@ -1,0 +1,12 @@
+p{
+  width: 500px;
+  display: inline-block;
+  vertical-align: top;
+  padding-left: 10px;
+}
+img{
+  display: inline-block;
+}
+div{
+  padding: 20px;
+}
