@@ -1,0 +1,25 @@
+div{
+  border: 1px solid black;
+  display: inline-block;
+  padding: 5px 20px;
+  text-align: center;
+  margin: 20px;
+}
+#user{
+  vertical-align: top;
+  display: inline-block;
+  width: 300px;
+}
+#computer{
+  vertical-align: top;
+  display: inline-block;
+  width: 300px;
+}
+#score{
+  vertical-align: top;
+  width: 600px;
+}
+#choice{
+  vertical-align: top;
+  width: 600px;
+}
