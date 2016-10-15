@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" type="text/css" href="http://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.css">
+  <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.0/themes/smoothness/jquery-ui.css">
+  <!-- <link rel="stylesheet" type="text/css" href="/static/styles.css"> -->
+  <style>
+
+  </style>
+  <script src="http://code.jquery.com/jquery-2.2.4.js"   integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI=" crossorigin="anonymous"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.0/jquery-ui.min.js"></script>  
+  <script type="text/javascript">
+
+    $(document).ready(function(){
+      console.log("jQuery has loaded properly")
+
+      
+      
+
+    });
+
+  </script>
+  <head>
+    <title>Jersey</title>
+  </head>
+  <body>
+    <div>
+      <form action="/players" method="POST">
+        <input type="text" name="name" value="Name">
+        <input type="text" name="jersey number" value="Jersey Number">
+        <input type="text" name="team" value="Team">
+        <input type="submit" name="submit" value="Submit">
+      </form>
+    </div>
+    <div id="playerInfo">
+      <p>{{ session['Name'] }}</p>
+      <p>{{ session['Jersey Number'] }}</p>
+      <p>{{ session['Team'] }}</p>
+      {% for x in range(0, 3): %}
+      <p>{{ phrase }}</p>
+      {% endfor%}
+    </div>
+  </body>
+</html>

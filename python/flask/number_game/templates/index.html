@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" type="text/css" href="http://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.css">
+  <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.0/themes/smoothness/jquery-ui.css">
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+  <style>
+
+  </style>
+  <script src="http://code.jquery.com/jquery-2.2.4.js"   integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI=" crossorigin="anonymous"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.0/jquery-ui.min.js"></script>  
+  <script type="text/javascript">
+
+    $(document).ready(function(){
+      console.log("jQuery has loaded properly")
+
+      
+
+    });
+
+  </script>
+  <title>A Number Guessing Game</title>
+</head>
+<body>
+  <div id="container">
+    <div id="gameInPlay">
+      <h3>Welcome to the Great Number Game!</h3>
+      <h5>I am thinking of a number between 1 and 100</h5>
+      <h5>Take a guess!</h5>
+      {% if session['correct'] == False %}
+      <div id="wrongGuess">
+        <h4>{{ session['result'] }}</h4>
+      </div>
+      {% endif %}
+      <div id="numberSubmission">
+        <form action="/guess" method="POST">
+          <input type="text" name="guess">
+          <input id="submit" type="submit" name="submit" value="Guess!">
+        </form>
+      </div>
+    </div>
+    {% if session['result'] == 0 %}
+    <div id="gotIt">
+      <h4>{{ session['answer'] }} was the number!</h4>
+      <form action="/reset" method="POST">
+        <input id="replay" type="submit" name="replay" value="Play again!">
+      </form>
+    </div>
+    {% endif %}
+  </div>
+</body>
+</html>

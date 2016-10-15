@@ -39,5 +39,3 @@
 // }
 // drawLeftStars(5);
 
-
-
