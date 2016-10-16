@@ -4,16 +4,13 @@
   text-align: center;
   margin-left: 100px;
 }
-#choice{
-  vertical-align: top;
-  width: 600px;
-}
 #wrongGuess{
   background-color: red;
   color: white;
   width: 300px;
   height: 300px;
   margin-left: 160px;
+  text-align: center;
 }
 #gotIt{
   background-color: green;
@@ -21,10 +18,14 @@
   width: 300px;
   height: 300px;
   margin-left: 160px;
+  text-align: center;
 }
 #replay{
   background-color: white;
 }
 #submit{
   margin-top: 20px;
+}
+h4{
+  padding-top: 90px;
 }
