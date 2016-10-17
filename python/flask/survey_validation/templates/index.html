@@ -20,25 +20,32 @@
   </head>
   <body>
     <div id="formContent">
+      {% with messages = get_flashed_messages() %}
+        {% if messages %}
+          {% for message in messages %}
+            <p>{{message}}</p>
+          {% endfor %}
+        {% endif %}
+      {% endwith %}
       <form action='/results' method='post'>
-        <div class="name">
-          Name: <input type='text' name='Your Name'>
+        <div id="name" class="data">
+          Name: <input type='text' name='Your Name' value="{% name %}">
         </div>
-        <div class="location">
+        <div id="location" class="data">
           Dojo Location: <select name="Dojo Location">
           <option value="Seattle">Seattle</option>
           <option value="Chicago">Chicago</option>
           <option value="San Jose">San Jose</option>
         </select>
       </div>
-      <div class="language">
+      <div id="language" class="data">
         Favorite Language: <select name="Favorite Language">
         <option value="Python">Python</option>
         <option value="Ruby">Ruby</option>
         <option value="Javascript">Javascript</option>
       </select>
     </div>
-    <div class="comment">
+    <div id="comment" class="data">
       Comment (optional): <input type='text' name='Comment'>
     </div>
     <input type="submit" name="Submit">
