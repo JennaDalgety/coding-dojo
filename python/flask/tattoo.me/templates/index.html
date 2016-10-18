@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<meta charset="utf-8">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<style>
+
+</style>
+<script type="text/javascript">
+  $(document).ready(function(){
+    console.log("jQuery has loaded properly")
+
+  });
+</script>
+<head>
+  <title>Registration Form</title>
+</head>
+<body>
+  <nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+      <div class="navbar-header">
+      <a href ="/" class="navbar-brand">Please Tattoo.Me</a>
+      </div>
+      <ul class="navbar-nav navbar-right">
+        <li>
+          <form class="navbar-form form-inline pull-right" action="/login" method="post">
+            <input type="text" name="email" placeholder="Email">
+            <input type="text" name="password" placeholder="Password">
+            <button type="submit" class="btn btn-primary">Sign In</button>
+          </form>
+        </li>
+        <li>
+          <a href="/register">Register!</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+  <div id="carousel" class="carousel slide" data-ride="carousel">
+    <ol class="carousel-indicators">
+      <li data-target="#carousel" data-slide-to="0" class="active"></li>
+      <li data-target="#carousel" data-slide-to="1" class="active"></li>
+      <li data-target="#carousel" data-slide-to="2" class="active"></li>
+      <li data-target="#carousel" data-slide-to="3" class="active"></li>
+    </ol>
+    <div class="carousel-inner" role="listbox">
+      <div class="item active">
+        <img src="http://placekitten.com/200/300" alt="PlaceKitten1">
+      </div>
+      <div class="item"> 
+        <img src="http://placekitten.com/400/500" alt="PlaceKitten2">
+      </div>
+      <div class="item">
+        <img src="http://placekitten.com/300/400" alt="PlaceKitten3">
+      </div>
+      <div class="item">
+        <img src="http://placekitten.com/100/200" alt="PlaceKitten4">
+      </div>
+    </div>
+  </div>
+  <div class="container-fluid" id="copyText">
+    <div class="row">
+      <div class="col-md-4 verticalLine">
+        <h3>Rad!</h3>
+        <p>Bacon ipsum dolor amet flank leberkas landjaeger shankle. Kielbasa beef t-bone pork belly meatball doner porchetta, brisket landjaeger tenderloin sausage hamburger rump chuck drumstick. Jerky sausage shank t-bone jowl ball tip salami andouille. Drumstick tail pork belly venison. Chuck tenderloin landjaeger beef ribs pork shoulder.</p>
+      </div>
+      <div class="col-md-4 verticalLine">
+        <h3>Cool!</h3>
+        <p>Bacon ipsum dolor amet flank leberkas landjaeger shankle. Kielbasa beef t-bone pork belly meatball doner porchetta, brisket landjaeger tenderloin sausage hamburger rump chuck drumstick. Jerky sausage shank t-bone jowl ball tip salami andouille. Drumstick tail pork belly venison. Chuck tenderloin landjaeger beef ribs pork shoulder.</p>
+      </div>
+      <div class="col-md-4 verticalLine">
+        <h3>Hawt!</h3>
+        <p>Bacon ipsum dolor amet flank leberkas landjaeger shankle. Kielbasa beef t-bone pork belly meatball doner porchetta, brisket landjaeger tenderloin sausage hamburger rump chuck drumstick. Jerky sausage shank t-bone jowl ball tip salami andouille. Drumstick tail pork belly venison. Chuck tenderloin landjaeger beef ribs pork shoulder.</p>
+      </div>
+    </div>
+  </div>
+  <nav class="navbar navbar-inverse navbar-bottom">
+    <div class="container-fluid" id="footer">
+      <p><a href="">Link 1</a></p>
+      <p><a href="">Link 2</a></p>
+      <p><a href="">Link 3</a></p>
+      <p><a href="">Link 4</a></p>
+    </div>
+  </nav>
+</body>
+</html>

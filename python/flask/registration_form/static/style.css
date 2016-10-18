@@ -1,0 +1,35 @@
+
+#form{
+  display: inline-block;
+  vertical-align: top;
+}
+.carousel-inner > .item > img, 
+.carousel-inner > .item > a > img{
+  width: 100%;
+  margin: auto;
+}
+#footer p{
+  display: inline-block;
+  line-height: 50px;
+  padding-left: 20px;
+} 
+#footer{
+  text-align: center;
+}
+#footer a{
+  color: gray;
+}
+.navbar{
+  margin: 0px;
+}
+.carousel{
+  margin: 0em 0em 2em 0em;
+}
+#copyText{
+  margin: 0em 0em 2em 0em;
+}
+.verticalLine{
+  text-align: center;
+  border-left: 1px solid black;
+  border-right: 1px solid black;
+}
