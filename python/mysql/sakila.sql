@@ -10,7 +10,7 @@ JOIN film_category
 ON film.film_id = film_category.film_id
 JOIN category
 ON category.category_id = film_category.category_id
-WHERE category.name = 'Comedy';
+WHERE category.category_id = 5;
 
 SELECT film.title, film.description, film.release_year
 FROM film
@@ -22,10 +22,12 @@ WHERE actor.actor_id = 5;
 
 SELECT customer.first_name, customer.last_name, customer.email, address.address
 FROM customer
-JOIN address
-ON customer.customer_id = address.address_id
-WHERE customer.store_id = 1 AND address.city_id = 1 OR address.city_id = 42 OR address.city_id = 312 OR address.city_id = 459;
-
+JOIN address 
+ON customer.address_id = address.address_id
+JOIN city 
+ON address.city_id = city.city_id
+WHERE customer.store_id = 1 AND (address.city_id = 1 OR address.city_id = 42 OR address.city_id = 312 OR address.city_id = 459);
+        
 SELECT film.title, film.description, film.release_year, film.rating, film.special_features
 FROM film
 JOIN film_actor
