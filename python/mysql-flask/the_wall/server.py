@@ -113,8 +113,6 @@ def comment():
       'post_id': request.form['post_id']
     }
 
-    print comment
-
     comments = mysql.query_db(query, comment)
 
   return redirect('/wall')
