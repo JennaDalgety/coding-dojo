@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Email Validation</title>
+        <link type="text/css" rel="stylesheet" href="{{ url_for('static',filename='style.css')}}">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.css">
+    </head>
+    <body>
+        <form action='/process' method="POST">
+            <label for="email">Email:</label>
+            <input type="text" name="email">
+            {% with messages = get_flashed_messages() %}
+                {% if messages %}
+                    {% for message in messages %}
+                        <p id="error">{{ message }} </p>
+                    {% endfor %}
+                {% endif %}
+            {% endwith %}
+            <button type="submit">Submit</button>
+        </form>
+    </body>
+</html>

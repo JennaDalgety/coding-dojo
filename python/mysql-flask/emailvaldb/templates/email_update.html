@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Update dat Email!</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.css">
+    </head>
+    <body>
+        <form action="/edit/{{ email['id'] }}" method="POST">
+            <p>Current Email: {{ email['email'] }}</p>
+            <p>New Email: <input type="text" name="email"></p>
+            <button type="submit">Submit</button> <a href="/success">Cancel</a>
+        </form>
+    </body>
+</html>
