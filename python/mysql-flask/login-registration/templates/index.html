@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Login-Registration</title>
+        <link rel="stylesheet"
+    href="{{ url_for('static', filename='main.css') }}">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.css">
+    </head>
+    <body>
+        <div id="login">
+            <h2>Log In Here</h2>
+
+            <form action="/login" method="POST">
+                <label for="email">Email: <input type="text" name="email"></label>
+                <label for="password">Password: <input type="password" name="password"></label>
+                <button type="submit">Log In</button>
+            </form>
+        </div>
+        <p>
+            {% with errors = get_flashed_messages() %}
+                {% if errors %}
+                    {% for error in errors %}
+                        <p>{{ error }} </p>
+                    {% endfor %}
+                {% endif %}
+            {% endwith %}
+        </p>
+        <div id="registration">
+            <h2>Register Here</h2>
+            <form action="/register" method="POST">
+                <label for="first_name">First Name: <input type="text" name="first_name"></label>
+                <label for="last_name">Last Name: <input type="text" name="last_name"></label>
+                <label for="email">Email: <input type="text" name="email"></label>
+                <label for="password">Password: <input type="password" name="password"></label>
+                <label for="confirm_password">Confirm Password: <input type="password" name="confirm_password"></label><button type="submit">Register</button>
+            </button>
+        </div>
+
+
+    </body>
+</html>

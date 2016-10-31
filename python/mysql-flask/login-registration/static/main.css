@@ -1,0 +1,17 @@
+#registration {
+    width: 400px;
+    border: 1px solid black;
+    margin: 20px;
+    padding: 20px;
+}
+
+#login {
+    width: 400px;
+    border: 1px solid black;
+    margin: 20px;
+    padding: 20px;
+}
+
+form input {
+    align-items: center;
+}
