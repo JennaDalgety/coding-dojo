@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.css">
+  <title>Friends</title>
+</head>
+<body>
+  <h3>Welcome to FULL FRIENDS!</h3>
+  <form action="/friends" method="POST">
+    <label for="first_name">First Name: <input type="text" name="first_name"></label>
+    <label for="last_name">Last Name: <input type="text" name="last_name"></label>
+    <label for="email">Email: <input type="text" name="email"></label>
+    <button type="submit">SUBMIT</button>
+  </form>
+    {% for friend in friends %}
+      <form action="/edit">
+        <p>{{ friend['first_name'] }} {{ friend['last_name'] }}</p>
+        <button type="submit">EDIT</button>
+      </form>
+    {% endfor %}
+</body>
+</html>
