@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" type="text/css" href="http://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.css">
+  <style>
+    .red{
+      color: red;
+    }
+  </style>
+  <script src="http://code.jquery.com/jquery-2.2.4.js"   integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI=" crossorigin="anonymous"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.0/jquery-ui.min.js"></script>  
+  <script type="text/javascript">
+
+    (document).ready(function(){
+      console.log("jQuery has loaded properly")
+
+      
+
+    });
+
+    </script>
+  <title>Login Page</title>
+</head>
+<body>
+  <h1>Login</h1>
+  <form class="login" action="/users/login" method="post">
+    <label for="userename">username
+      <input type="text" name="username" value="">
+    </label>
+    <label for="first_name">first name
+      <input type="text" name="first_name" value="">
+    </label>
+    <label for="last_name">last name
+      <input type="text" name="last_name" value="">
+    </label>
+  </form>
+</body>
+</html>

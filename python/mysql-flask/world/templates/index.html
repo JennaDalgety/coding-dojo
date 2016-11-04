@@ -1,12 +1,51 @@
 <!DOCTYPE html>
-<meta charset="utf-8">
 <html>
 <head>
-  <title>The World!</title>
+  <meta charset="utf-8">
+  <link rel="stylesheet" type="text/css" href="http://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.css">
+  <style>
+
+  </style>
+  <script src="http://code.jquery.com/jquery-2.2.4.js"   integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI=" crossorigin="anonymous"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.0/jquery-ui.min.js"></script>  
+  <script type="text/javascript">
+
+    (document).ready(function(){
+      console.log("jQuery has loaded properly")
+
+      $.get('/render_partial', function(res){
+        $('#tbody').html(res);
+        return false;
+      })
+      
+      $(document).on('click', 'a.delete', function(){
+        var link = $(this).attr('link');
+        $.get(link, function(res){
+          $('#tbody').html(res);
+          return false
+        });
+      });
+    });
+
+    </script>
+  <title>Countries Of The World!</title>
 </head>
 <body>
-  {% for result in results %}
-  {{ result }}
-  {% endfor %}
+  <h1>Countries Of The World!</h1>
+  <table>
+    <thead>
+      <th>name</th>
+      <th>region</th>
+      <th>population</th>
+      <th>gdp</th>
+      <th>capital</th>
+    </thead>
+    <tbody id="tbody">
+      
+    </tbody>
+  </table>
+  <a href="/countries/new">
+  <button type="button" name="button">Create New Country</button>
+  </a>  
 </body>
 </html>

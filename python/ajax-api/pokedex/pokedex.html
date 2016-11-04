@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" type="text/css" href="http://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.css">
+  <style>
+    #wrapper{
+
+    }
+    #pokemon{
+      display: inline-block;
+      vertical-align: top;
+      width: 70%;
+    }
+    #showbox{
+      border: 3px solid red;
+      display: inline-block;
+      vertical-align: top;
+      width: 20%;
+      height: 400px;
+      padding: 5px;
+    }
+  </style>
+  <script src="http://code.jquery.com/jquery-2.2.4.js"   integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI=" crossorigin="anonymous"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.0/jquery-ui.min.js"></script>  
+  <script type="text/javascript">
+
+    $(document).ready(function(){
+      console.log("jQuery has loaded properly")
+      for(i = 1; i < 152; i++){                 
+        var img = '<img id="' + i + ' "src='+"http://54.218.118.137/imgs/" + i +'>';                 
+        $('#pokemon').append(img);
+      };
+
+      $('img').click(function(){              
+        console.log("image was clicked")             
+        var poke_id = $(this).attr('id');             
+        var url = 'http://pokeapi.co/api/v1/pokemon/'+ poke_id;             
+        $.get(url,  function(info){                 
+          console.log(info);                 
+          var html_str = "<h3>" + info.name+"</h3>";
+          html_str += "<h5>Height: " + info.height + "</h5>";
+          html_str += "<h5>Weight: "+info.weight+"</h5>";
+          html_str += "<h5>Types: "; 
+          html_str += "<ul>";                 
+          for (var i =0 ; i < info.types.length; i++) {   html_str +="<li>"+info.types[i].name+"</li>";
+          } 
+          html_str += "</ul>";                 
+            $("#showbox").html(html_str);             
+        },  'json');  
+      });
+    });
+
+    </script>
+  <title>Mah Pokedex!</title>
+</head>
+<body>
+  <div id="wrapper">
+    <h3>Mah Pokedex!</h3>
+    <div id="pokemon"></div>
+    <div id="showbox"></div>
+  </div>
+</body>
+</html>

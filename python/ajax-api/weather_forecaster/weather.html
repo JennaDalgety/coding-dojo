@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" type="text/css" href="http://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.css">
+  <style>
+
+  </style>
+  <script src="http://code.jquery.com/jquery-2.2.4.js"   integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI=" crossorigin="anonymous"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.0/jquery-ui.min.js"></script>  
+  <script type="text/javascript">
+
+    $(document).ready(function(){
+      console.log("jQuery has loaded properly");
+
+      $('form').submit(function(){
+        $.get('http://api.openweathermap.org/data/2.5/weather?q=' + $('#location_input').val() + '&APPID=49c48cd58422cf05a3fe4609b3df7155', function(data){
+
+            var convert_temp = (data['main']['temp'] * 9/5) - 459.67;
+            var result = convert_temp.toFixed(0)
+          
+            $('#location').html(data['name']);
+            $('#temp').html(result)
+        }, 'json');
+
+        return false;
+
+      });
+    });
+
+    </script>
+  <title>Weather Man</title>
+</head>
+<body>
+  <h1>The Weather:</h1>
+  <h2>Location: <span id="location"></span></h2>
+  <h3>Temperature: <span id="temp"></span> degrees farenheit</h3>
+  <form class="location_form" action="#get_weather" method="post">
+    <input id="location_input" type="text" name="location" value="">
+    <input type="submit" name="name" value="Gimme Dat Weather!">
+  </form>
+</body>
+</html>

@@ -42,8 +42,11 @@ def create():
       'email': email
     }
 
-    friends = mysql.query_db(query, data)
-    return friends
+    user = mysql.query_db(query, data)
+
+    query = 'SELECT first_name, last_name, email, created_at, updated_at FROM users WHERE users.id = users.id'
+
+    friends = mysql.query(query, data)
 
     return render_template('index.html', friends=friends)
 
