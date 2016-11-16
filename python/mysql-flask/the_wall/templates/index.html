@@ -16,7 +16,7 @@
   <p>
     {% with errors = get_flashed_messages() %}
     {% for error in errors %}
-       {{ error }}
+       <p>{{ error }}</p>
     {% endfor %}
     {% endwith %}
   </p>

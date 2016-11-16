@@ -101,6 +101,3 @@ def login_query(flash, form, bcrypt, mysql):
     flash('Your password/email is not recognized')
 
   return users
-
-
-

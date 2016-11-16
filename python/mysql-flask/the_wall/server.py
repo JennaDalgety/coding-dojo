@@ -62,11 +62,13 @@ def wall():
     return redirect('/')
   
   else:
-    query = 'SELECT users.first_name, users.last_name, posts.content, posts.created_at, posts.id FROM posts JOIN users ON users.id = posts.user_id'
+    # post query
+    query = 'SELECT users.first_name, users.last_name, posts.content, posts.created_at, posts.id FROM posts JOIN users ON users.id = posts.user_id ORDER BY posts.created_at DESC LIMIT 20'
     posts = mysql.query_db(query)
     
 
     for post in posts:
+      # comment query
       query = 'SELECT users.first_name, users.last_name, comments.content, comments.created_at, comments.id FROM comments JOIN users ON users.id = comments.user_id WHERE comments.post_id = :id'
       
       data = {
@@ -112,6 +114,8 @@ def comment():
       'user_id': session['logged_in_user'],
       'post_id': request.form['post_id']
     }
+
+    print comment
 
     comments = mysql.query_db(query, comment)
 

@@ -3,6 +3,7 @@
 <head>
   <meta charset="utf-8">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.css">
+  <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='styles.css')}}">
   <title>Welcome!</title>
 </head>
 <body>
@@ -20,6 +21,12 @@
     {% for post in posts %}
       <p>{{ post['first_name'] }} {{ post['last_name'] }} posted on {{ post['created_at'] }}:</p>
       <p>{{ post['content'] }} 
+      {% for comment in post['comments'] %}
+        <div class="comments">
+          <p>{{ comment['first_name'] }} {{ comment['last_name'] }} commented on {{ comment['created_at'] }}: </p>
+          <p>{{ comment['content'] }}</p>
+        </div>
+      {% endfor %}
       <form action="/comment" method="POST">
         <textarea name="comment" cols="100" rows="5"></textarea>
         <input type="hidden" name="post_id" value="{{ post['id'] }}">
@@ -27,10 +34,6 @@
          <button type="submit">COMMENT</button>
       </form>
       </p>
-      {% for comment in post['comments'] %}
-        <p>{{ comment['first_name'] }} {{ comment['last_name'] }} commented on {{ comment['created_at'] }}: </p>
-        <p>{{ comment['content'] }}</p>
-      {% endfor %}
     {% endfor %}
   </p>
 </body>

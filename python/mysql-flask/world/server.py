@@ -17,6 +17,7 @@ def index():
 @app.route('/countries')
 def index():
   # results = mysql.query_db('SELECT countries.id, countries.name, region, cities.population, gnp, cities.name AS country_capital FROM countries JOIN cities ON countries.capital = cities.id ORDER BY countries.population DESC LIMIT 10')
+  # print results, type(results)
   return render_template('index.html')
 
 
@@ -35,6 +36,7 @@ def create():
   row = mysql.query_db(create_query, create_data)
   
   return render_template('render_partial')
+
 
 
 
@@ -78,6 +80,30 @@ def update(id):
     'population': request.form['population']
   }
 
+
+
+
+# @app.route('/users/login', methods=['POST'])
+# def users(login):
+#   errors = []
+#   if not request.form['first_name']:
+#     errors.append('first name must be filled out')
+#   elif not request.form['first_name'].isalpha():
+#     errors.append('first name must contain only letters')
+#   if not request.form['last_name']:
+#     errors.append('last name must be filled out')
+#   elif not request.form['last_name'].isalpha():
+#     errors.append('last name must contain only letters')
+#   if not request.form['password']:
+#     errors.append('password must be filled out')
+#   elif not len(request.form['password']) > 8:
+#     errors.append('password too short')
+#   if errors:
+#     for error in errors:
+#       flash(error)
+#   else:
+#     user = 'SELECT * FROM users WHERE username = {}'.format(request.form['username'])
+#       
 
 
 app.run(debug=True)
