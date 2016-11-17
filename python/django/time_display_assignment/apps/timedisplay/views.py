@@ -1,10 +1,11 @@
 from django.shortcuts import render, HttpResponse
 import datetime
+from django.utils import timezone
 
 # Create your views here.
 def index(request):
   
-  now = datetime.datetime.now()
+  now = timezone.now()
 
   context = {
     'now': now

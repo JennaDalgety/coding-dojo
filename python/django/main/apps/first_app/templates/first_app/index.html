@@ -22,5 +22,10 @@
 </head>
 <body>
   <h1>This is my index page!</h1>
+  <form action="/new_user" method="post" accept-charset="utf-8">
+  {% csrf_token %}
+   <input type="text" name="first_name">
+   <input type="submit" name="" value="submit">
+  </form>
 </body>
 </html>

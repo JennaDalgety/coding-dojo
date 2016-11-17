@@ -1,0 +1,18 @@
+.time_date{
+  display: inline-block;
+  vertical-align: top;
+  border: 1px solid black;
+  padding: 20px;
+  font-size: 400%
+
+}
+h5{
+  width: 300px;
+  vertical-align: top;
+  border: 1px solid black;
+  padding: 20px;
+  display: inline-block;
+}
+#wrapper{
+  text-align: center;
+}
