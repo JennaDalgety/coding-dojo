@@ -1,0 +1,12 @@
+#wrapper{
+  width: 400px;
+  border: 1px solid black;
+  display: inline-block;
+  margin-left: 30%;
+}
+form{
+  display: inline-block;
+  vertical-align: top;
+  text-align: center;
+  padding: 20px;
+}

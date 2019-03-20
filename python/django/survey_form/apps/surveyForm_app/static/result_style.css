@@ -1,0 +1,11 @@
+#wrapper{
+  width: 500px;
+  display: inline-block;
+  margin-left: 30%;
+}
+.submit_tracker{
+  background-color: #b6d7a8;
+  width: 400px;
+  border: 1px solid black;
+  display: inline-block;
+}

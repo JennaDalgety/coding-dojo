@@ -1,0 +1,17 @@
+#wrapper{
+  text-align: center;
+  width: 400px;
+  margin-left: 30%;
+}
+h5{
+  vertical-align: top;
+  display: inline-block;
+  
+}
+p{
+  vertical-align: top;
+  padding: 20px;
+  display: inline-block;
+  border: 1px solid black;
+  font-size: 300%
+}

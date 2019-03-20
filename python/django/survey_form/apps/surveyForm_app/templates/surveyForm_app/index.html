@@ -1,0 +1,45 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" type="text/css" href="http://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.css">
+  <link rel="stylesheet" type="text/css" href="{% static 'survey_style.css' %}">
+  <style>
+
+  </style>
+  <script src="http://code.jquery.com/jquery-2.2.4.js"   integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI=" crossorigin="anonymous"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.0/jquery-ui.min.js"></script>  
+  <script type="text/javascript">
+
+    $(document).ready(function(){
+      console.log("jQuery has loaded properly")
+
+      
+
+    });
+
+    </script>
+  <title>Survey Form</title>
+</head>
+<body>
+  <div id="wrapper">
+    <form action="/survey/process" method="post" accept-charset="utf-8" name="submissionForm">
+      {% csrf_token %}
+      <label>Your Name: </label><textarea name="name"></textarea>
+      <label>Dojo Location: </label><select name="location">
+        <option value="chicago">Chicago</option>
+        <option value="san_jose">San Jose</option>
+        <option value="seattle">Seattle</option>
+      </select>
+      <label>Favorite Language: </label><select name="language">
+        <option value="javascript">Javascript</option>
+        <option value="python">Python</option>
+        <option value="ruby">Ruby</option>
+      </select>
+      <label>Comment (optional): </label><textarea name="comment" rows="20", cols="50"></textarea>
+      <input type="submit" name="submit">
+    </form>
+  </div>
+</body>
+</html>

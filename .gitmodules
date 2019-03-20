@@ -1,0 +1,6 @@
+[submodule "MEANpt1"]
+	path = MEANpt1
+	url = https://github.com/CodingDojo-MEAN-11-17/MEAN1
+[submodule "MEANpt2"]
+	path = MEANpt2
+	url = https://github.com/CodingDojo-MEAN-11-17/MEAN2
